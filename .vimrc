@@ -5,9 +5,6 @@ set autowriteall
 set nocompatible
 filetype plugin indent on
 syntax on
-let clj_highlight_builtins = 1
-let clj_want_gorilla = 1
-let vimclojure#NailgunClient = "/Users/Joe/.vim/vimclojure-2.1.2/ng"
 
 set backspace=indent,eol,start
 set ruler
