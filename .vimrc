@@ -1,10 +1,11 @@
-"Suppress persistent highlighting of searched terms"
+"Suppress persistent highlighting of searched terms
 set nohlsearch
 set autowriteall
-
+set number
 set nocompatible
 filetype plugin indent on
 syntax on
+:au FocusLost * :wa
 
 set backspace=indent,eol,start
 set ruler
@@ -12,9 +13,6 @@ set ruler
 let mapleader = ","
 
 set tabstop=2 shiftwidth=2 expandtab
-
-"F6 to user awsfind on the word under the cursor
-nnoremap <silent> <F6> :!awsfind <cword><CR>
 
 "incrementally search file"
 set incsearch
@@ -65,8 +63,6 @@ map <leader>ta :! rake testall<CR>
 map <leader>tf :! rake test:functionals<CR>
 map <leader>tu :! rake test:units<CR>
 
-map <leader>ub :! rake uadmin_boot<CR>
-
 " Split screen vertically and move between screens.
 map <leader>v :vsp<CR> 
 map <leader>h h
@@ -90,10 +86,9 @@ map <leader>back t
 " tags shortcuts
 map fd 
 map ps 
-map ut :Runittest<CR>
-map ft :Rfunctionaltest<CR>
-map md :Rmodel<CR>
-map cd :Rcontroller<CR>
+map <leader>sf :SweetVimRspecRunFocused
+map <leader>sa :SweetVimRspecRunFile
+map <leader>sp :SweetVimRspecRunPrevious
 map uts :vsp<CR>l:Runittest<CR>
 map fts :vsp<CR>l:Rfuntionaltest<CR>
 
